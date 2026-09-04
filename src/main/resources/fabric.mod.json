@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "maptracker",
+  "version": "1.0.0",
+  "name": "Map Tracker",
+  "description": "Sends live player coordinates to a web dashboard",
+  "entrypoints": {
+    "main": [
+      "com.tracker.MapTracker"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "minecraft": "26.1.2",
+    "java": ">=21"
+  }
+}
