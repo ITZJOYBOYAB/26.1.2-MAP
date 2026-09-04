@@ -9,7 +9,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up JDK 25
+      # Install Java 21 to run Gradle itself
+      - name: Set up Java 21 (for Gradle)
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      # Install Java 25 so the build toolchain can compile Minecraft 26.1.2
+      - name: Set up Java 25 (for Minecraft & Mod compilation)
         uses: actions/setup-java@v4
         with:
           java-version: '25'
