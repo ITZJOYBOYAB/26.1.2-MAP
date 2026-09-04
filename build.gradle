@@ -3,6 +3,22 @@ plugins {
     id 'maven-publish'
 }
 
+// Force the build script to use modern ASM that understands Java 25 (class version 69)
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    configurations.classpath {
+        resolutionStrategy {
+            force 'org.ow2.asm:asm:9.7.1'
+            force 'org.ow2.asm:asm-commons:9.7.1'
+            force 'org.ow2.asm:asm-tree:9.7.1'
+            force 'org.ow2.asm:asm-util:9.7.1'
+            force 'org.ow2.asm:asm-analysis:9.7.1'
+        }
+    }
+}
+
 version = "1.0.0"
 group = "com.tracker"
 
